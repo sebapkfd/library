@@ -7,3 +7,11 @@
     height: fit-content;
     background-color: rgb(223, 214, 175);
 }
+
+.book-container{
+    background-color: rgb(68, 143, 126);
+    height: 55px;
+    width: 300px;
+    border: rgb(223, 214, 175) solid;
+    color: rgb(223, 214, 175);
+}

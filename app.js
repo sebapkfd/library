@@ -1,4 +1,5 @@
 let myLibrary = [];
+let formIsOpen = false;
 
 function Book(title, author, nPages, read){
     this.title = title
@@ -23,6 +24,20 @@ addToLibrary('the Three', 'XDDD', 44, false);
 myLibrary.forEach( (bookElement) =>{
     let mainDiv = document.querySelector('.library-container');
     let bookContent = document.createElement('div');
-    bookContent.textContent = bookElement.title;
+    bookContent.className = "book-container";
+    bookContent.textContent = bookElement.info();
     mainDiv.appendChild(bookContent);
+})
+
+let addBook = document.querySelector('#addBook-button');
+addBook.addEventListener('click', ()=>{
+    let formDiv = document.querySelector('.form-container');
+    (formIsOpen) ? (
+        formDiv.style.display = 'none',
+        formIsOpen = false
+        ) : (
+        formDiv.style.display = 'block',
+        formIsOpen = true
+        )
+
 })
