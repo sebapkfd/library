@@ -8,6 +8,14 @@
     background-color: rgb(223, 214, 175);
 }
 
+.book-container{
+    background-color: rgb(68, 143, 126);
+    height: 55px;
+    width: 300px;
+    border: rgb(223, 214, 175) solid;
+    color: rgb(223, 214, 175);
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -18,25 +26,26 @@
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
-  }
+}
 
-.book-container{
-    background-color: rgb(68, 143, 126);
-    height: 55px;
-    width: 300px;
-    border: rgb(223, 214, 175) solid;
-    color: rgb(223, 214, 175);
-    
+.form-background{
+    display: flex;
+    justify-content: center;
 }
 
 .form-container{
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    width: 50%;
     background-color: rgb(223, 214, 175);
+    justify-content: center;
 }
 
-.form-Button{
+.form-button{
+    height: 30px;
+    width: 30px;
+}
+
+.submit-button{
     height: 30px;
     width: 30px;
 }

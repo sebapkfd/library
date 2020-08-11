@@ -9,24 +9,28 @@
 <body>
     <div class="title-container">
         Library 
-        <button class="form-Button" id="addBook-button">+</button>
+        <button class="form-button" id="addBook-button">+</button>
     </div>
     
     <div class="library-container"></div>
     <div class="modal"> 
-        <div class="form-container">
-            <button class="form-Button" id="closeForm-button">x</button>
-            <form>
-                <label for="bookTitle">Title</label><br>
-                <input type="text" id="bookTitle" name="bookTitle"><br>
-                <label for="bookAuthor">Author</label><br>
-                <input type="text" id="bookAuthor" name="bookAuthor"><br>
-                <label for="bookPages">Number of Pages</label><br>
-                <input type="text" id="bookPages" name="bookPages"><br>
-                <label for="readBook">Already read?</label><br>
-                <input type="text" name="readBook" id="readBook"><br>
-            </form>
+        <div class="form-background">
+            <div class="form-container">
+                <button class="form-button" id="closeForm-button">x</button>
+                <form id="book-form">
+                    <button class="submit-button" type="submit">Add</button>
+                    <label for="bookTitle">Title</label><br>
+                    <input type="text" id="bookTitle" name="bookTitle"><br>
+                    <label for="bookAuthor">Author</label><br>
+                    <input type="text" id="bookAuthor" name="bookAuthor"><br>
+                    <label for="bookPages">Number of Pages</label><br>
+                    <input type="text" id="bookPages" name="bookPages"><br>
+                    <label for="readBook">Already read?</label><br>
+                    <input type="text" id="bookRead" name="readBook"><br>
+                </form>
+            </div>    
         </div>
+        
 
     </div>
 

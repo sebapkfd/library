@@ -29,7 +29,7 @@ myLibrary.forEach( (bookElement) =>{
     mainDiv.appendChild(bookContent);
 })
 
-let formButtons = document.querySelectorAll('.form-Button');
+let formButtons = document.querySelectorAll('.form-button');
 formButtons.forEach((formButton) =>{
     formButton.addEventListener('click', ()=>{
         let formDiv = document.querySelector('.modal');
@@ -42,3 +42,16 @@ formButtons.forEach((formButton) =>{
             )
     })
 } )
+
+if (formIsOpen) {
+    let addBookForm = document.querySelector('.submit-button');
+    addBookForm.addEventListener('click', ()=>{
+        let tittleToAdd = document.getElementById('bookTitle').value;
+        let authorToAdd = document.getElementById('bookAuthor').value;
+        let pagesToAdd = document.getElementById('bookPages').value;
+        let readToAdd = document.getElementById('bookRead').value;
+        console.log(tittleToAdd, authorToAdd, pagesToAdd, readToAdd);
+        addToLibrary(tittleToAdd, authorToAdd, pagesToAdd, readToAdd);
+        console.log(myLibrary)
+    })   
+}
