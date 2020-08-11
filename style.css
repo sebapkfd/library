@@ -1,0 +1,9 @@
+.title-container{
+    height: 100px;
+    background-color: rgb(113, 167, 155);
+}
+
+.library-container{
+    height: fit-content;
+    background-color: rgb(223, 214, 175);
+}
