@@ -9,11 +9,26 @@
 <body>
     <div class="title-container">
         Library 
-        <button id="addBook-button">+</button>
+        <button class="form-Button" id="addBook-button">+</button>
     </div>
     
     <div class="library-container"></div>
-    <div class="form-container" style="display: none;">XDDDDD</div>
+    <div class="modal"> 
+        <div class="form-container">
+            <button class="form-Button" id="closeForm-button">x</button>
+            <form>
+                <label for="bookTitle">Title</label><br>
+                <input type="text" id="bookTitle" name="bookTitle"><br>
+                <label for="bookAuthor">Author</label><br>
+                <input type="text" id="bookAuthor" name="bookAuthor"><br>
+                <label for="bookPages">Number of Pages</label><br>
+                <input type="text" id="bookPages" name="bookPages"><br>
+                <label for="readBook">Already read?</label><br>
+                <input type="text" name="readBook" id="readBook"><br>
+            </form>
+        </div>
+
+    </div>
 
 </body>
 <script src="app.js"></script>

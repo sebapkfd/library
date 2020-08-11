@@ -8,10 +8,35 @@
     background-color: rgb(223, 214, 175);
 }
 
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+  }
+
 .book-container{
     background-color: rgb(68, 143, 126);
     height: 55px;
     width: 300px;
     border: rgb(223, 214, 175) solid;
     color: rgb(223, 214, 175);
+    
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgb(223, 214, 175);
+}
+
+.form-Button{
+    height: 30px;
+    width: 30px;
 }

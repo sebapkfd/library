@@ -29,15 +29,16 @@ myLibrary.forEach( (bookElement) =>{
     mainDiv.appendChild(bookContent);
 })
 
-let addBook = document.querySelector('#addBook-button');
-addBook.addEventListener('click', ()=>{
-    let formDiv = document.querySelector('.form-container');
-    (formIsOpen) ? (
-        formDiv.style.display = 'none',
-        formIsOpen = false
-        ) : (
-        formDiv.style.display = 'block',
-        formIsOpen = true
-        )
-
-})
+let formButtons = document.querySelectorAll('.form-Button');
+formButtons.forEach((formButton) =>{
+    formButton.addEventListener('click', ()=>{
+        let formDiv = document.querySelector('.modal');
+        (formIsOpen) ? (
+            formDiv.style.display = 'none',
+            formIsOpen = false
+            ) : (
+            formDiv.style.display = 'block',
+            formIsOpen = true
+            )
+    })
+} )
