@@ -28,16 +28,12 @@
     background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
 }
 
-.form-background{
-    display: flex;
-    justify-content: center;
-}
-
 .form-container{
     display: flex;
     width: 50%;
     background-color: rgb(223, 214, 175);
     justify-content: center;
+    margin: 5vh auto;
 }
 
 .form-button{

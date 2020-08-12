@@ -1,5 +1,9 @@
 let myLibrary = [];
 let formIsOpen = false;
+const formButtons = document.querySelectorAll('.form-button');
+const mainDiv = document.querySelector('.library-container');
+const formDiv = document.querySelector('.modal');
+const addBookForm = document.querySelector('.submit-button');
 
 function Book(title, author, nPages, read){
     this.title = title
@@ -13,45 +17,51 @@ Book.prototype.info = function() {
 }
 
 function addToLibrary(title, author, nPages, read) {
-    let bookToAdd = new Book(title, author, nPages,read);
+    const bookToAdd = new Book(title, author, nPages,read);
     myLibrary.push(bookToAdd);
+    return bookToAdd;
 }
 
-addToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
-addToLibrary('The Dos', 'Dos', 100, true);
-addToLibrary('the Three', 'XDDD', 44, false);
-
-myLibrary.forEach( (bookElement) =>{
-    let mainDiv = document.querySelector('.library-container');
+function addDiv(bookElement){
     let bookContent = document.createElement('div');
     bookContent.className = "book-container";
     bookContent.textContent = bookElement.info();
     mainDiv.appendChild(bookContent);
-})
+}
 
-let formButtons = document.querySelectorAll('.form-button');
+function submitForm(){
+    let titleToAdd = document.getElementById('bookTitle').value;
+    let authorToAdd = document.getElementById('bookAuthor').value;
+    let pagesToAdd = document.getElementById('bookPages').value;
+    let readToAdd = document.getElementById('bookRead').value;
+    let bookAdded = addToLibrary(titleToAdd, authorToAdd, pagesToAdd, readToAdd);
+    addDiv(bookAdded);
+    alert(bookAdded.info())
+}
+
+
 formButtons.forEach((formButton) =>{
     formButton.addEventListener('click', ()=>{
-        let formDiv = document.querySelector('.modal');
         (formIsOpen) ? (
             formDiv.style.display = 'none',
             formIsOpen = false
             ) : (
             formDiv.style.display = 'block',
-            formIsOpen = true
+            formIsOpen = true,
+            addBookForm.addEventListener('click', submitForm)
             )
     })
-} )
+})
 
-if (formIsOpen) {
-    let addBookForm = document.querySelector('.submit-button');
-    addBookForm.addEventListener('click', ()=>{
-        let tittleToAdd = document.getElementById('bookTitle').value;
-        let authorToAdd = document.getElementById('bookAuthor').value;
-        let pagesToAdd = document.getElementById('bookPages').value;
-        let readToAdd = document.getElementById('bookRead').value;
-        console.log(tittleToAdd, authorToAdd, pagesToAdd, readToAdd);
-        addToLibrary(tittleToAdd, authorToAdd, pagesToAdd, readToAdd);
-        console.log(myLibrary)
-    })   
-}
+addToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
+addToLibrary('The Dos', 'Dos', 100, true);
+addToLibrary('the Three', 'XDDD', 44, false);
+myLibrary.forEach( (bookElement) => addDiv(bookElement))
+
+/*
+Empezar a trabajar los divs:
+    Estilos
+    Buttons
+Resolver el tema que se recarga la pagina -> localstorage
+*/
+
