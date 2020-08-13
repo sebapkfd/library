@@ -7,22 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="title-container">
-        Library 
-        <button class="form-button" id="addBook-button">+</button>
-    </div>
-    
-    <div class="library-container"></div>
-    <div class="modal"> 
+    <div class="main-container">
+        <div class="title">
+            Library
+        </div>
         <div class="form-container">
-            <button class="form-button" id="closeForm-button">x</button>
-            <form id="book-form">
-                <button class="submit-button" type="submit">Add</button>
-                Title: <input type="text" id="bookTitle" name="bookTitle"><br>
-                Author: <input type="text" id="bookAuthor" name="bookAuthor"><br>
-                N° of pages<input type="text" id="bookPages" name="bookPages"><br>
-                Already read?<input type="text" id="bookRead" name="readBook"><br>
-            </form>
+            <Form>
+                Title: <input type="text">
+                Author: <input type="text">
+                Pages: <input type="text">
+                <button>Read</button>
+            </Form>
+        </div>
+        <div class="books">
+            Books
         </div>
     </div>
 
