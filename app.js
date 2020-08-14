@@ -1,9 +1,6 @@
 let myLibrary = [];
-let formIsOpen = false;
-const formButtons = document.querySelectorAll('.form-button');
-const mainDiv = document.querySelector('.library-container');
-const formDiv = document.querySelector('.modal');
-const addBookForm = document.querySelector('.submit-button');
+const mainDiv = document.querySelector('.books');
+const addButton = document.querySelector('#addBook');
 
 function Book(title, author, nPages, read){
     this.title = title
@@ -30,39 +27,33 @@ function addDiv(bookElement){
 }
 
 function submitForm(){
-    let titleToAdd = document.getElementById('bookTitle').value;
-    let authorToAdd = document.getElementById('bookAuthor').value;
-    let pagesToAdd = document.getElementById('bookPages').value;
-    let readToAdd = document.getElementById('bookRead').value;
+    let titleToAdd = document.getElementById('titleInput').value;
+    let authorToAdd = document.getElementById('authorInput').value;
+    let pagesToAdd = document.getElementById('pagesInput').value;
+    let readToAdd = document.getElementById('readInput').value;
     let bookAdded = addToLibrary(titleToAdd, authorToAdd, pagesToAdd, readToAdd);
     addDiv(bookAdded);
     alert(bookAdded.info())
 }
 
 
-formButtons.forEach((formButton) =>{
-    formButton.addEventListener('click', ()=>{
-        (formIsOpen) ? (
-            formDiv.style.display = 'none',
-            formIsOpen = false
-            ) : (
-            formDiv.style.display = 'block',
-            formIsOpen = true,
-            addBookForm.addEventListener('click', submitForm)
-            )
-    })
-})
-
 addToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
 addToLibrary('The Dos', 'Dos', 100, true);
 addToLibrary('the Three', 'XDDD', 44, false);
 myLibrary.forEach( (bookElement) => addDiv(bookElement))
 
+addButton.addEventListener('click', submitForm);
+
 /*
 Empezar a trabajar los divs:
+    querySelectors
+    eventlistener para los botones
+    Desplegar divs por defecto
+    Formulario
     Estilos
     Buttons
-Resolver el tema que se recarga la pagina -> localstorage
-https://draeramsey.github.io/library/
+    localstorage
+    https://draeramsey.github.io/library/
+    https://dovimaj.github.io/my-book-shelf/
 */
 

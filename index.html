@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Library</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,15 +13,14 @@
         </div>
         <div class="form-container">
             <Form>
-                Title: <input type="text">
-                Author: <input type="text">
-                Pages: <input type="text">
-                <button>Read</button>
+                <input type="text" id="titleInput" placeholder="Title">
+                <input type="text" id="authorInput" placeholder="Author">
+                <input type="text" id="pagesInput" placeholder="Pages">
+                <input type="checkbox" id="readInput"> Read
+                <button id="addBook">Add Book</button>
             </Form>
         </div>
-        <div class="books">
-            Books
-        </div>
+        <div class="books"></div>
     </div>
 
 </body>
