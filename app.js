@@ -2,6 +2,24 @@ let myLibrary = [];
 const mainDiv = document.querySelector('.books');
 const addButton = document.querySelector('#addBook');
 
+if (localStorage.length == 0) {
+    localStorage.setItem('myLibrary', JSON.stringify(myLibrary))
+}else{
+
+}
+
+function saveData(){
+    localStorage.setItem('myLibrary', JSON.stringify(myLibrary))
+}
+
+function loadData(){
+    if (localStorage.length == 0) {
+        console.log('localStorage empty');
+    }else{
+        myLibrary = JSON.parse(localStorage.getItem("myLibrary"))
+    }
+}
+
 function Book(title, author, nPages, read){
     this.title = title
     this.author = author
@@ -10,10 +28,13 @@ function Book(title, author, nPages, read){
 }
 
 Book.prototype.info = function() {
-    return (this.read)? `${this.title} by ${this.author}, ${this.nPages} pages, already read`: `${this.title} by ${this.author}, ${this.nPages} pages, not read yet`
+    return (this.read)? (
+        `${this.title} by ${this.author}, ${this.nPages} pages, already read`
+    ):(
+        `${this.title} by ${this.author}, ${this.nPages} pages, not read yet`)
 }
 
-function addToLibrary(title, author, nPages, read) {
+function addToLibrary(title, author, nPages, read){
     const bookToAdd = new Book(title, author, nPages,read);
     myLibrary.push(bookToAdd);
     return bookToAdd;
@@ -33,6 +54,7 @@ function submitForm(){
     let readToAdd = document.getElementById('readInput').value;
     let bookAdded = addToLibrary(titleToAdd, authorToAdd, pagesToAdd, readToAdd);
     addDiv(bookAdded);
+    saveData();
     alert(bookAdded.info())
 }
 
@@ -46,13 +68,11 @@ addButton.addEventListener('click', submitForm);
 
 /*
 Empezar a trabajar los divs:
-    querySelectors
-    eventlistener para los botones
-    Desplegar divs por defecto
-    Formulario
     Estilos
-    Buttons
+    Buttons divs books
     localstorage
+    change read -> status
+    Read/status is not using boolean
     https://draeramsey.github.io/library/
     https://dovimaj.github.io/my-book-shelf/
 */
