@@ -4,7 +4,7 @@ const addButton = document.querySelector('#addBook');
 
 if (localStorage.length == 0){
     addToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
-    addToLibrary('The Dos', 'Dos', 100, true);
+    addToLibrary('The Dos', 'Dos', 100, false);
     addToLibrary('The Three', 'XDDD', 44, false);
     myLibrary.forEach( (bookElement) => addDiv(bookElement))
     saveData();
@@ -40,12 +40,48 @@ function addToLibrary(title, author, nPages, status){
     return bookToAdd;
 }
 
+function aux() {
+    // delete book and div
+    // maybe use id
+    console.log('xd');
+}
+
+function changeStatus(bookElement){
+    // It changes the status and div, but delete the buttons
+    // Maybe use id
+    // need to refres localStorage aswell
+    // Consult if reloading the page is too much slow
+    while (mainDiv.firstChild != null){
+        mainDiv.removeChild(mainDiv.firstChild)
+    }
+    bookElement.status = !bookElement.status;
+    saveData()
+    location.reload();
+    // bookContent.innerText = `${bookElement.title} ${bookElement.status}`;
+
+}
+
 function addDiv(bookElement){
     let bookContent = document.createElement('div');
     bookContent.className = "book-container";
-    bookContent.textContent = bookElement.title;
+    bookContent.innerText = `${bookElement.title} ${bookElement.status}`;
     console.log(bookElement);
+
+    let deleteBookButton = document.createElement('button');
+    deleteBookButton.className = 'bookButton';
+    deleteBookButton.innerHTML = 'delete Book';
+    deleteBookButton.addEventListener('click', aux)
+
+    let statusBookButton = document.createElement('button');
+    statusBookButton.className = 'bookButton';
+    statusBookButton.innerHTML = 'Read Book';
+
     mainDiv.appendChild(bookContent);
+    bookContent.appendChild(deleteBookButton);
+    bookContent.appendChild(statusBookButton);
+
+    statusBookButton.addEventListener('click', () => changeStatus(bookElement,bookContent))
+
 }
 
 function submitForm(){
@@ -73,8 +109,8 @@ addButton.addEventListener('click', submitForm);
 /*
 Empezar a trabajar los divs:
     Estilos
-    Buttons divs books
-    It is saving empty info
+    Delete books
+    Change status of books
 
     https://draeramsey.github.io/library/
     https://dovimaj.github.io/my-book-shelf/
