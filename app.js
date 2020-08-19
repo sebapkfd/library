@@ -40,48 +40,43 @@ function addToLibrary(title, author, nPages, status){
     return bookToAdd;
 }
 
-function aux() {
-    // delete book and div
-    // maybe use id
-    console.log('xd');
+function deleteBook(bookId){
+    let bookToDelete = document.getElementById(bookId);
+    mainDiv.removeChild(bookToDelete);
+    localStorage.removeItem(bookId);
+    console.log(bookId);
 }
 
-function changeStatus(bookElement){
-    // It changes the status and div, but delete the buttons
-    // Maybe use id
-    // need to refres localStorage aswell
-    // Consult if reloading the page is too much slow
-    while (mainDiv.firstChild != null){
-        mainDiv.removeChild(mainDiv.firstChild)
-    }
-    bookElement.status = !bookElement.status;
-    saveData()
-    location.reload();
-    // bookContent.innerText = `${bookElement.title} ${bookElement.status}`;
-
+function changeStatus(bookId){
+    let divToChange = document.getElementById(bookId);
+    let bookToChange = JSON.parse(localStorage[bookId]);
+    console.log(bookToChange);
+    divToChange.textContent = `${bookToChange.title} ${!bookToChange.status}`;
+    bookToChange.status = !bookToChange.status
+    localStorage.setItem(bookId, JSON.stringify(bookToChange));
 }
 
 function addDiv(bookElement){
+    // Set in div apart the text and the buttons
     let bookContent = document.createElement('div');
     bookContent.className = "book-container";
-    bookContent.innerText = `${bookElement.title} ${bookElement.status}`;
+    bookContent.textContent = `${bookElement.title} ${bookElement.status}`;
+    bookContent.setAttribute('id', `${bookElement.title}`)
     console.log(bookElement);
 
     let deleteBookButton = document.createElement('button');
     deleteBookButton.className = 'bookButton';
     deleteBookButton.innerHTML = 'delete Book';
-    deleteBookButton.addEventListener('click', aux)
+    deleteBookButton.addEventListener('click', () => deleteBook(bookContent.id))
 
     let statusBookButton = document.createElement('button');
     statusBookButton.className = 'bookButton';
     statusBookButton.innerHTML = 'Read Book';
+    statusBookButton.addEventListener('click', () => changeStatus(bookContent.id))
 
     mainDiv.appendChild(bookContent);
     bookContent.appendChild(deleteBookButton);
     bookContent.appendChild(statusBookButton);
-
-    statusBookButton.addEventListener('click', () => changeStatus(bookElement,bookContent))
-
 }
 
 function submitForm(){
@@ -89,8 +84,10 @@ function submitForm(){
     let authorToAdd = document.getElementById('authorInput').value;
     let pagesToAdd = parseInt(document.getElementById('pagesInput').value);
     let statusToAdd = document.getElementById('statusInput').checked;
-    if(titleToAdd != '' && authorToAdd != '' && typeof pagesToAdd != 'number'){
+    if(titleToAdd != '' && authorToAdd != '' && typeof pagesToAdd == 'number'){
+        console.log('added');
         addToLibrary(titleToAdd, authorToAdd, pagesToAdd, statusToAdd);
+        
     }
 }
 
@@ -111,6 +108,7 @@ Empezar a trabajar los divs:
     Estilos
     Delete books
     Change status of books
+    Add book stopped working
 
     https://draeramsey.github.io/library/
     https://dovimaj.github.io/my-book-shelf/
