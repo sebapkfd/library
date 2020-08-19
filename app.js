@@ -44,6 +44,14 @@ function deleteBook(bookId){
     let bookToDelete = document.getElementById(bookId);
     mainDiv.removeChild(bookToDelete);
     localStorage.removeItem(bookId);
+    let index;
+    myLibrary.forEach( (book)=>{
+        if (book.title == bookId){
+            index = myLibrary.indexOf(book);
+        }
+    })
+    myLibrary.splice(index, 1)
+    console.log(myLibrary);
     console.log(bookId);
 }
 
@@ -58,25 +66,25 @@ function changeStatus(bookId){
 
 function addDiv(bookElement){
     // Set in div apart the text and the buttons
-    let bookContent = document.createElement('div');
-    bookContent.className = "book-container";
-    bookContent.textContent = `${bookElement.title} ${bookElement.status}`;
-    bookContent.setAttribute('id', `${bookElement.title}`)
+    let bookDiv = document.createElement('div');
+    bookDiv.className = "book-container";
+    bookDiv.textContent = `${bookElement.title} ${bookElement.status}`;
+    bookDiv.setAttribute('id', `${bookElement.title}`)
     console.log(bookElement);
 
     let deleteBookButton = document.createElement('button');
     deleteBookButton.className = 'bookButton';
     deleteBookButton.innerHTML = 'delete Book';
-    deleteBookButton.addEventListener('click', () => deleteBook(bookContent.id))
+    deleteBookButton.addEventListener('click', () => deleteBook(bookDiv.id))
 
     let statusBookButton = document.createElement('button');
     statusBookButton.className = 'bookButton';
     statusBookButton.innerHTML = 'Read Book';
-    statusBookButton.addEventListener('click', () => changeStatus(bookContent.id))
+    statusBookButton.addEventListener('click', () => changeStatus(bookDiv.id))
 
-    mainDiv.appendChild(bookContent);
-    bookContent.appendChild(deleteBookButton);
-    bookContent.appendChild(statusBookButton);
+    mainDiv.appendChild(bookDiv);
+    bookDiv.appendChild(deleteBookButton);
+    bookDiv.appendChild(statusBookButton);
 }
 
 function submitForm(){
@@ -87,7 +95,6 @@ function submitForm(){
     if(titleToAdd != '' && authorToAdd != '' && typeof pagesToAdd == 'number'){
         console.log('added');
         addToLibrary(titleToAdd, authorToAdd, pagesToAdd, statusToAdd);
-        
     }
 }
 
@@ -106,11 +113,6 @@ addButton.addEventListener('click', submitForm);
 /*
 Empezar a trabajar los divs:
     Estilos
-    Delete books
     Change status of books
-    Add book stopped working
-
-    https://draeramsey.github.io/library/
-    https://dovimaj.github.io/my-book-shelf/
 */
 
