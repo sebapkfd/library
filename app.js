@@ -56,7 +56,7 @@ function deleteBook(bookId){
 }
 
 function changeStatus(bookId){
-    let divToChange = document.getElementById(bookId);
+    let divToChange = document.getElementById(bookId).firstChild;
     let bookToChange = JSON.parse(localStorage[bookId]);
     console.log(bookToChange);
     divToChange.textContent = `${bookToChange.title} ${!bookToChange.status}`;
@@ -65,10 +65,12 @@ function changeStatus(bookId){
 }
 
 function addDiv(bookElement){
-    // Set in div apart the text and the buttons
     let bookDiv = document.createElement('div');
     bookDiv.className = "book-container";
-    bookDiv.textContent = `${bookElement.title} ${bookElement.status}`;
+
+    let contentDiv = document.createElement('div');
+    contentDiv.textContent = `${bookElement.title} ${bookElement.status}`;
+
     bookDiv.setAttribute('id', `${bookElement.title}`)
     console.log(bookElement);
 
@@ -83,6 +85,7 @@ function addDiv(bookElement){
     statusBookButton.addEventListener('click', () => changeStatus(bookDiv.id))
 
     mainDiv.appendChild(bookDiv);
+    bookDiv.appendChild(contentDiv);
     bookDiv.appendChild(deleteBookButton);
     bookDiv.appendChild(statusBookButton);
 }
@@ -113,6 +116,5 @@ addButton.addEventListener('click', submitForm);
 /*
 Empezar a trabajar los divs:
     Estilos
-    Change status of books
 */
 
