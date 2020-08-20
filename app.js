@@ -26,11 +26,11 @@ function Book(title, author, nPages, status){
     this.status = status
 }
 
-Book.prototype.info = function() {
-    return (this.status)? (
-        `${this.title} by ${this.author}, ${this.nPages} pages, already read`
+function info(book){
+    return (book.status)? (
+        `${book.title} by ${book.author}, ${book.nPages} pages, already read`
     ):(
-        `${this.title} by ${this.author}, ${this.nPages} pages, not read yet`)
+        `${book.title} by ${book.author}, ${book.nPages} pages, not read yet`)
 }
 
 function addToLibrary(title, author, nPages, status){
@@ -59,8 +59,8 @@ function changeStatus(bookId){
     let divToChange = document.getElementById(bookId).firstChild;
     let bookToChange = JSON.parse(localStorage[bookId]);
     console.log(bookToChange);
-    divToChange.textContent = `${bookToChange.title} ${!bookToChange.status}`;
     bookToChange.status = !bookToChange.status
+    divToChange.textContent = info(bookToChange);
     localStorage.setItem(bookId, JSON.stringify(bookToChange));
 }
 
@@ -69,7 +69,7 @@ function addDiv(bookElement){
     bookDiv.className = "book-container";
 
     let contentDiv = document.createElement('div');
-    contentDiv.textContent = `${bookElement.title} ${bookElement.status}`;
+    contentDiv.textContent = info(bookElement);
 
     bookDiv.setAttribute('id', `${bookElement.title}`)
     console.log(bookElement);
@@ -116,5 +116,6 @@ addButton.addEventListener('click', submitForm);
 /*
 Empezar a trabajar los divs:
     Estilos
+    https://htmlpreview.github.io/?https://github.com/TamaraNC/library/blob/master/index.html
 */
 
