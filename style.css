@@ -49,6 +49,10 @@ button:hover{
     background-color: #333756;
 }
 
+.bookButton{
+    margin: 0rem 0.2rem;
+}
+
 .form-container{
     background-color: #dfdfdf;
     width: 100%;
@@ -70,8 +74,15 @@ button:hover{
     color: white;
     background-color: #333756;
     border-radius: 15px;
-    width: 50%;
-    height: 45px;
+    width: 45%;
+    height: 60px;
     padding: 1rem;
     margin: 1rem;
 }
+
+.info-container{
+    display: flex;
+    margin: 10px 0px;
+}
+
+

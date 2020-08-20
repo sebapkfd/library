@@ -69,6 +69,7 @@ function addDiv(bookElement){
     bookDiv.className = "book-container";
 
     let contentDiv = document.createElement('div');
+    contentDiv.className = "info-container";
     contentDiv.textContent = info(bookElement);
 
     bookDiv.setAttribute('id', `${bookElement.title}`)
@@ -116,6 +117,11 @@ addButton.addEventListener('click', submitForm);
 /*
 Empezar a trabajar los divs:
     Estilos
+    Change the info to the forma:
+    Title: bla
+    Autho: bla
+    Pages: bla
+    Status *This part with a diferent color depending of the status
     https://htmlpreview.github.io/?https://github.com/TamaraNC/library/blob/master/index.html
 */
 
