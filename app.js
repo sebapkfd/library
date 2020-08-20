@@ -122,6 +122,7 @@ Empezar a trabajar los divs:
     Autho: bla
     Pages: bla
     Status *This part with a diferent color depending of the status
+    add Hover to bookButtons 
     https://htmlpreview.github.io/?https://github.com/TamaraNC/library/blob/master/index.html
 */
 

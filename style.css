@@ -4,6 +4,15 @@ body{
     font-family: 'Poppins', sans-serif;
     background-color: #dfdfdf;
 }
+a{
+  outline: none;
+  text-decoration: none;
+}
+
+a:visited{
+    color: #333756;
+    text-decoration: none;
+}
 
 .main-container{
     width: 60%;
@@ -36,8 +45,8 @@ li{
 button {
     padding: 0.1rem 0.5rem 0.2rem 0.5rem;
     border-radius: 25px;
-    background-color: white;
-    color: #333756;
+    background-color: #333756;
+    color: white;
     font-weight: 600;
     border: none;
     transition: 0.3s;
@@ -45,11 +54,13 @@ button {
 }
 
 button:hover{
-    color: white;
-    background-color: #333756;
+    color: #333756;
+    background-color: white;
 }
 
 .bookButton{
+    background-color: white;
+    color: #333756;
     margin: 0rem 0.2rem;
 }
 
@@ -77,7 +88,7 @@ button:hover{
     width: 45%;
     height: 60px;
     padding: 1rem;
-    margin: 1rem;
+    margin: 10px;
 }
 
 .info-container{
