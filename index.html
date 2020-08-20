@@ -11,30 +11,30 @@
         <div class="title">
             <a href="https://github.com/sebapkfd/library" target="_blank">Library</a>
         </div>
-        <div class="form-container">
-            <Form>
-                <ul>
-                    <li>
-                        Title <br>
-                        <input type="text" id="titleInput" placeholder="Title">
-                    </li>
-                    <li>
-                        Author <br>
-                        <input type="text" id="authorInput" placeholder="Author">
-                    </li>
-                    <li>
-                        Pages <br>
-                        <input type="text" id="pagesInput" placeholder="Pages">
-                    </li>
-                    <li>
-                        <br> Read 
-                        <input type="checkbox" id="statusInput">
-                    </li>
-                    <li> <br>
-                        <button id="addBook">Add Book</button>
-                    </li>
-                </ul>
-            </Form>
+
+        <button id="openForm">Add Book</button>
+        <div class="modal"style="display: none;">
+            <div class="form-container">
+                <div class="modal__content">
+                    <label for="">Title:</label>
+                    <input type="text" id="titleInput" placeholder="Title">
+                </div>
+                <div class="modal__content">
+                    <label for="">Author:</label>
+                    <input type="text" id="authorInput" placeholder="Author">
+                </div>
+                <div class="modal__content">
+                    <label for="">Pages:</label>
+                    <input type="text" id="pagesInput" placeholder="Pages">
+                </div>
+                <div>
+                <label for="read-status">Check the box if you've read this book</label>
+                <input type="checkbox" id="statusInput">
+                </div>
+                
+                <button class="bookButton" id="addBook">Add</button>
+                <button class="bookButton" id="cancel">Cancel</button>
+            </div>
         </div>
         <div class="books"></div>
     </div>

@@ -1,6 +1,9 @@
 let myLibrary = [];
 const mainDiv = document.querySelector('.books');
+const openForm = document.querySelector('#openForm')
 const addButton = document.querySelector('#addBook');
+const cancelButton = document.querySelector('#cancel');
+const modal = document.querySelector('.modal')
 
 if (localStorage.length == 0){
     addToLibrary('The Hobbit', 'J.R.R. Tolkien', 295, false);
@@ -77,7 +80,7 @@ function addDiv(bookElement){
 
     let deleteBookButton = document.createElement('button');
     deleteBookButton.className = 'bookButton';
-    deleteBookButton.innerHTML = 'delete Book';
+    deleteBookButton.innerHTML = 'Delete Book';
     deleteBookButton.addEventListener('click', () => deleteBook(bookDiv.id))
 
     let statusBookButton = document.createElement('button');
@@ -100,6 +103,7 @@ function submitForm(){
         console.log('added');
         addToLibrary(titleToAdd, authorToAdd, pagesToAdd, statusToAdd);
     }
+    modal.style.display = 'none';
 }
 
 function render(){
@@ -112,17 +116,27 @@ function render(){
 }
 
 
-addButton.addEventListener('click', submitForm);
 
+
+openForm.addEventListener('click', ()=>{
+    modal.style.display = 'block';
+    addButton.addEventListener('click', () =>{
+        submitForm();
+        location.reload();
+    });
+    cancelButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    })
+    //maybe add a refresh page
+})
 /*
 Empezar a trabajar los divs:
-    Estilos
     Change the info to the forma:
     Title: bla
     Autho: bla
     Pages: bla
     Status *This part with a diferent color depending of the status
-    add Hover to bookButtons 
+    use css variables 
     https://htmlpreview.github.io/?https://github.com/TamaraNC/library/blob/master/index.html
 */
 

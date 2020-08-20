@@ -17,7 +17,7 @@ a:visited{
 .main-container{
     width: 60%;
     height: 100%;
-    background-color: darkorchid;
+    background-color: #dfdfdf;
 }
 
 .title{
@@ -29,20 +29,7 @@ a:visited{
     color: #333756;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    color: #333756;
-}
-
-li{
-    float: left;
-    padding: 3px;
-}
-
-button {
+button{
     padding: 0.1rem 0.5rem 0.2rem 0.5rem;
     border-radius: 25px;
     background-color: #333756;
@@ -58,19 +45,38 @@ button:hover{
     background-color: white;
 }
 
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 0px;
+}
+
 .bookButton{
     background-color: white;
     color: #333756;
     margin: 0rem 0.2rem;
+    transition: 0.3s;
+}
+
+.bookButton:hover{
+    background-color: #c6c6c6f3;
 }
 
 .form-container{
-    background-color: #dfdfdf;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
+    padding: 2rem 2rem;
+    border-radius: 15px;
+    background: #333756;
+    line-height: 3rem;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 8rem;
 }
 
 .books{
