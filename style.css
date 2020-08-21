@@ -69,6 +69,7 @@ button:hover{
     background-color: white;
     color: #333756;
     margin: 0.2rem 0.2rem;
+    padding: 0.4em 0.4em;
     transition: 0.3s;
     height: 2em;
 }
@@ -86,7 +87,7 @@ button:hover{
     line-height: 3rem;
     position: relative;
     width: 30%;
-    margin: 10% auto;
+    margin: 5em auto;
 
 }
 
