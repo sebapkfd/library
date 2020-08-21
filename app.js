@@ -115,9 +115,6 @@ function render(){
     myLibrary.forEach( (bookElement) => addDiv(bookElement))
 }
 
-
-
-
 openForm.addEventListener('click', ()=>{
     modal.style.display = 'block';
     addButton.addEventListener('click', () =>{
@@ -127,17 +124,15 @@ openForm.addEventListener('click', ()=>{
     cancelButton.addEventListener('click', () => {
         modal.style.display = 'none';
     })
-    //maybe add a refresh page
 })
 /*
 Empezar a trabajar los divs:
-    Change the info to the forma:
+    Change the info to the form:
     Title: bla
     Autho: bla
     Pages: bla
     Status *This part with a diferent color depending of the status
     use css variables
     Agrandar titulo y Add Book Button
-    https://htmlpreview.github.io/?https://github.com/TamaraNC/library/blob/master/index.html
 */
 
