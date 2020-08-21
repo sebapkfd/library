@@ -70,6 +70,7 @@ button:hover{
     color: #333756;
     margin: 0.2rem 0.2rem;
     transition: 0.3s;
+    height: 2em;
 }
 
 .bookButton:hover{
@@ -85,7 +86,7 @@ button:hover{
     line-height: 3rem;
     position: relative;
     width: 30%;
-    margin: 8rem auto;
+    margin: 10% auto;
 
 }
 
@@ -95,6 +96,7 @@ button:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .book-container{
