@@ -18,6 +18,14 @@ a:visited{
     width: 60%;
     height: 100%;
     background-color: #dfdfdf;
+    
+}
+
+.addBook-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 2em;
 }
 
 .title{
@@ -32,8 +40,8 @@ a:visited{
 button{
     padding: 0.1rem 0.5rem 0.2rem 0.5rem;
     border-radius: 25px;
-    background-color: #333756;
-    color: white;
+    background-color: white;
+    color: #333756;
     font-weight: 600;
     border: none;
     transition: 0.3s;
@@ -41,8 +49,8 @@ button{
 }
 
 button:hover{
-    color: #333756;
-    background-color: white;
+    color: white;
+    background-color: #333756;
 }
 
 .modal{
@@ -60,7 +68,7 @@ button:hover{
 .bookButton{
     background-color: white;
     color: #333756;
-    margin: 0rem 0.2rem;
+    margin: 0.2rem 0.2rem;
     transition: 0.3s;
 }
 
@@ -72,11 +80,13 @@ button:hover{
     padding: 2rem 2rem;
     border-radius: 15px;
     background: #333756;
+    color: white;
+    font-weight: 600;
     line-height: 3rem;
     position: relative;
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 8rem;
+    width: 30%;
+    margin: 8rem auto;
+
 }
 
 .books{
@@ -92,8 +102,7 @@ button:hover{
     background-color: #333756;
     border-radius: 15px;
     width: 45%;
-    height: 60px;
-    padding: 1rem;
+    padding: 1em;
     margin: 10px;
 }
 
@@ -102,4 +111,12 @@ button:hover{
     margin: 10px 0px;
 }
 
+.inputDiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
+#statusDiv{
+    display: inherit;
+}

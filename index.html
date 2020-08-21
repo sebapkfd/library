@@ -11,27 +11,26 @@
         <div class="title">
             <a href="https://github.com/sebapkfd/library" target="_blank">Library</a>
         </div>
-
-        <button id="openForm">Add Book</button>
+        <div class="addBook-container">
+            <button id="openForm">Add Book</button>
+        </div>
         <div class="modal"style="display: none;">
             <div class="form-container">
-                <div class="modal__content">
-                    <label for="">Title:</label>
-                    <input type="text" id="titleInput" placeholder="Title">
+                <div class="inputDiv">
+                    <label for="">Title</label> 
+                    <input type="text" id="titleInput">
                 </div>
-                <div class="modal__content">
-                    <label for="">Author:</label>
-                    <input type="text" id="authorInput" placeholder="Author">
+                <div class="inputDiv">
+                    <label for="">Author</label> 
+                    <input type="text" id="authorInput">
                 </div>
-                <div class="modal__content">
-                    <label for="">Pages:</label>
-                    <input type="text" id="pagesInput" placeholder="Pages">
+                <div class="inputDiv">
+                    <label for="">Pages</label>
+                    <input type="text" id="pagesInput">
                 </div>
-                <div>
-                <label for="read-status">Check the box if you've read this book</label>
-                <input type="checkbox" id="statusInput">
+                <div class="inputDiv" id="statusDiv">
+                    Already read? <input type="checkbox" id="statusInput">
                 </div>
-                
                 <button class="bookButton" id="addBook">Add</button>
                 <button class="bookButton" id="cancel">Cancel</button>
             </div>

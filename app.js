@@ -136,7 +136,8 @@ Empezar a trabajar los divs:
     Autho: bla
     Pages: bla
     Status *This part with a diferent color depending of the status
-    use css variables 
+    use css variables
+    Agrandar titulo y Add Book Button
     https://htmlpreview.github.io/?https://github.com/TamaraNC/library/blob/master/index.html
 */
 
