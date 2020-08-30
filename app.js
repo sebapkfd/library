@@ -269,7 +269,7 @@ function submitForm(){
     return null;
 }
 
-//lc method
+//lc method**
 function render(){
     Object.keys(localStorage).forEach(function(key){
         let bookToadd = JSON.parse(localStorage.getItem(key));
