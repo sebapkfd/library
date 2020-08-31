@@ -111,7 +111,7 @@ class Interface{
     
         let statusBookButton = document.createElement('button');
         statusBookButton.className = 'bookButton';
-        statusBookButton.innerHTML = 'Read Book';
+        statusBookButton.innerHTML = 'Status';
         statusBookButton.addEventListener('click', () => {
             this.library.changeStatus(bookDiv.id);
             this.changeDivStatus(bookDiv.id);
