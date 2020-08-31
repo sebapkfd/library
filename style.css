@@ -104,14 +104,22 @@ button:hover{
     color: white;
     background-color: #333756;
     border-radius: 15px;
-    width: 45%;
+    width: 35%;
     padding: 1em;
     margin: 10px;
 }
 
 .info-container{
     display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
     margin: 10px 0px;
+}
+
+.bookButtons{
+    display: flex;
+    width: 80%;
 }
 
 .inputDiv{
